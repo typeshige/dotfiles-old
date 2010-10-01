@@ -1,6 +1,5 @@
 set nocompatible
 set noexrc " don't use local version of .(g)vimrc, etc
-"set background=dark
 set number
 syntax on
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
