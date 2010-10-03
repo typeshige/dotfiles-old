@@ -1,13 +1,35 @@
 set nocompatible
+let mapleader = ','
+imap jj <Esc>
 set noexrc " don't use local version of .(g)vimrc, etc
 set number
-syntax on
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+" Vertical and horizontal split then hop to a new buffer
+:noremap <Leader>v :vsp^M^W^W<cr>
+:noremap <Leader>h :split^M^W^W<cr>
 
 filetype plugin indent on " load filetype plugins/indent settings
 set autochdir
-set backspace=indent,eol,start " make backspace more flexible?
+
+"allow backspacing over everything in insert mode
+set backspace=indent,eol,start 
+
+set history=1000
+
+set showcmd
+set showmode
+
+set nowrap
+set linebreak
+
 set mouse=a " use mouse everywhere
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase " if caps, go case-sensitive
 
 "Vim UI {
     set cursorcolumn " highlight the current column
@@ -34,15 +56,14 @@ set mouse=a " use mouse everywhere
 " }
 
 " Text Formatting/Layout {
+    set tabstop=8
     set expandtab
     set formatoptions=rq " insert comment leader on return, let gq format
-    set ignorecase
     set infercase " case inferred
     set shiftround
-    set smartcase " if caps, go case-sensitive
     set shiftwidth=4 " auto-indent amount when using cindent
     set softtabstop=4 " when tab or bs, how many spaces
-    set tabstop=4
+    set textwidth=79
     set autoindent
     set smarttab
 " }
@@ -72,6 +93,7 @@ let Tlist_Use_Horiz_Window=0
     noremap <space> <C-f>
     map <F4> :TlistToggle<CR>
     map <F7> :NERDTreeToggle<CR>
+:noremap <Leader>n :NERDTreeToggle<CR>
 
 " }
 " Various Taglist diplay config:
@@ -83,18 +105,25 @@ let Tlist_File_Fold_Auto_Close = 1
 
 " PYDICTION
 "
-let g:pydiction_location='~/vim/vimfiles/ftplugin/pydiction/complete-dict'
-let g:pydiction_menu_height = 20
+"let g:pydiction_location='~/vim/vimfiles/ftplugin/pydiction/complete-dict'
+"let g:pydiction_menu_height = 20
 
 " COLORS
 "
-"set background=dark
-colorscheme ir_black
+set background=dark
+colorscheme dw_yellow 
+syntax on
 "let xterm16_brightness='default'
 "let xterm16_colormap='allblue'
 "colo xterm16
 
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+" Insert New Line *************************************************************
+map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
+map <Enter> o<ESC>
+
+"autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python set ft=python.django
+autocmd FileType html set ft=htmldjango.html
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
@@ -145,7 +174,9 @@ if has("gui_running")
     " }
 endif
 " }
+"
+let g:miniBufExplMapWindowNavVim = 1
 
-filetype indent on
-filetype on
-filetype plugin on
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
