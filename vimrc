@@ -1,4 +1,12 @@
+"        .
+"        |      o
+"    .--.|--.   .  .-.. .-.
+"    `--.|  |   | (   |(.-'
+"    `--''  `--' `-`-`| `--'
+"                  ._.'
+"
 set nocompatible
+set hidden
 let mapleader = ','
 imap jj <Esc>
 set noexrc " don't use local version of .(g)vimrc, etc
@@ -17,8 +25,12 @@ set backspace=indent,eol,start
 
 set history=1000
 
+" editing behaviour {{{
+
 set showcmd
 set showmode
+
+" }}}
 
 set nowrap
 set linebreak
@@ -96,6 +108,7 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>1 :set number!<CR>
 :noremap <Leader>v :edit $MYVIMRC<CR>
+map <Leader>b :LustyJuggler<CR>
 
 " Text bubbling
 
