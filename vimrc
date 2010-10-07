@@ -94,6 +94,19 @@ let Tlist_Use_Horiz_Window=0
     map <F4> :TlistToggle<CR>
     map <F7> :NERDTreeToggle<CR>
 :noremap <Leader>n :NERDTreeToggle<CR>
+:noremap <Leader>1 :set number!<CR>
+:noremap <Leader>v :edit $MYVIMRC<CR>
+
+" Text bubbling
+
+:noremap <C-k> [e
+:noremap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+
 
 " }
 " Various Taglist diplay config:
@@ -129,11 +142,14 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd FileType python compiler pylint
 
+autocmd bufwritepost .vimrc source $MYVIMRC
+
 "the quickfix window is not always 10 lines height
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+
 
 "quickfix toogle
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
@@ -175,8 +191,10 @@ if has("gui_running")
 endif
 " }
 "
-let g:miniBufExplMapWindowNavVim = 1
 
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+set wildmenu
+set wildmode=longest,full
+set wildignore=*.pyc
+
+let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeMouseMode = 3
