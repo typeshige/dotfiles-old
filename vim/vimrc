@@ -34,6 +34,7 @@ set showmode
 
 set nowrap
 set linebreak
+set ai
 
 set mouse=a " use mouse everywhere
 

@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/shige/.vim'
 let g:netrw_dirhist_2='/home/shige/dotfiles/vim'
 let g:netrw_dirhist_3='/home/django/public_html/sub4/nai_year_11/nai_year_11/views'
 let g:netrw_dirhist_4='/home/django/applications/django-naiyear5'
 let g:netrw_dirhist_5='/home/django/.virtualenvs/astrobiology_self_manage/src/django-newsletter/.git/info'
+let g:netrw_dirhist_6='/home/django/applications/nims-citations/citations'
