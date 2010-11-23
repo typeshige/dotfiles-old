@@ -1,1 +1,0 @@
-../../github/lusty/plugin/lusty-explorer.vim

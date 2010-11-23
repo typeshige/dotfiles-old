@@ -1,1 +1,0 @@
-../../github/vim-unimpaired/doc/unimpaired.txt
