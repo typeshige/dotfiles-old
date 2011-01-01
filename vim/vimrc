@@ -196,7 +196,7 @@ autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline
 "highlight columns over 80
 "from http://vim.wikia.com/wiki/Highlight_long_lines
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
 
 " GUI Settings {
