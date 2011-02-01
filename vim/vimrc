@@ -114,6 +114,8 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>1 :set number!<CR>
 :noremap <Leader>v :edit $MYVIMRC<CR>
+:noremap <Leader>a :NERDTree apps<CR>
+:noremap <Leader>p :NERDTree projects<CR>
 map <Leader>b :LustyJuggler<CR>
 
 " Text bubbling
