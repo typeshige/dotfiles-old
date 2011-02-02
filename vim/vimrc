@@ -37,6 +37,9 @@ set showmode
 
 " }}}
 
+
+" autocmd BufEnter * :syntax sync fromstart
+
 set nowrap
 set linebreak
 set ai
@@ -155,7 +158,7 @@ syntax on
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
-"autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python set ft=python.django
 autocmd FileType html set ft=htmldjango.html
 
@@ -219,3 +222,5 @@ set wildignore=*.pyc
 
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMouseMode = 3
+
+autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
