@@ -5,13 +5,26 @@
 "    `--''  `--' `-`-`| `--'
 "                  ._.'
 "
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-
 set nocompatible
+
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#runtime_prepend_subdirectories("~/.vim/bundle")
+silent! call pathogen#helptags()
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Fixes Comenting hash indentation
+inoremap # X#
+
+syntax on
+
+set fileformats=unix,mac,dos
 set hidden
+filetype plugin indent on
+
+
 let mapleader = ','
 imap jj <Esc>
 set noexrc " don't use local version of .(g)vimrc, etc
@@ -22,7 +35,6 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 :noremap <Leader>v :vsp^M^W^W<cr>
 :noremap <Leader>h :split^M^W^W<cr>
 
-filetype plugin indent on " load filetype plugins/indent settings
 set autochdir
 
 "allow backspacing over everything in insert mode
@@ -58,7 +70,7 @@ set smartcase " if caps, go case-sensitive
     set list " show tabs
     set listchars=tab:>-,trail:- " show tabs and trailing
     set ruler
-    " set scrolloff=10 " keep 10 lines top/bottom for scope
+    set scrolloff=5 " keep 10 lines top/bottom for scope
     set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
     "              | | | | |  |   |      |  |     |    |
     "              | | | | |  |   |      |  |     |    + current
@@ -76,6 +88,11 @@ set smartcase " if caps, go case-sensitive
     "              +-- full path to file in the buffer
 " }
 
+" Python
+autocmd BufRead,BufNewFile *.py syntax on
+autocmd BufRead,BufNewFile *.py set ai
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
+
 " Text Formatting/Layout {
     set tabstop=8
     set expandtab
@@ -89,9 +106,7 @@ set smartcase " if caps, go case-sensitive
     set smarttab
 " }
 
-set nobackup
-set nowritebackup
-set noswapfile
+set title
 
 set guioptions-=T
 
@@ -116,10 +131,25 @@ let Tlist_Use_Horiz_Window=0
     map <F7> :NERDTreeToggle<CR>
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>1 :set number!<CR>
-:noremap <Leader>v :edit $MYVIMRC<CR>
+:noremap <Leader>V :edit $MYVIMRC<CR>
 :noremap <Leader>a :NERDTree apps<CR>
 :noremap <Leader>p :NERDTree projects<CR>
 map <Leader>b :LustyJuggler<CR>
+map <Leader>H :set hls!<CR>
+
+" Jumping into arrow darkness with this 
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+
 
 " Text bubbling
 
@@ -131,6 +161,7 @@ vmap <C-j> ]egv
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+command! -nargs=* W write <args>
 
 " }
 " Various Taglist diplay config:
@@ -147,9 +178,9 @@ let Tlist_File_Fold_Auto_Close = 1
 
 " COLORS
 "
+set t_Co=256
 set background=dark
-colorscheme dw_yellow 
-syntax on
+colorscheme wombat256 
 "let xterm16_brightness='default'
 "let xterm16_colormap='allblue'
 "colo xterm16
@@ -223,4 +254,4 @@ set wildignore=*.pyc
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMouseMode = 3
 
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
