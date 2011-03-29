@@ -19,3 +19,6 @@
 [submodule "vim/bundle/pep8"]
 	path = vim/bundle/pep8
 	url = https://github.com/nvie/vim-pep8.git
+[submodule "vim/bundle/pydiction"]
+	path = vim/bundle/pydiction
+	url = https://github.com/vim-scripts/Pydiction.git
