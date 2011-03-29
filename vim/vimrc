@@ -15,8 +15,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Fixes Comenting hash indentation
-inoremap # X#
 
 syntax on
 
@@ -64,11 +62,14 @@ set incsearch
 set ignorecase
 set smartcase " if caps, go case-sensitive
 
+
 "Vim UI {
     set cursorcolumn " highlight the current column
     set cursorline " highlight the current line
     set list " show tabs
     set listchars=tab:>-,trail:- " show tabs and trailing
+    "set listchars=tab:▸\ ,trail:·,eol:¬
+    "set listchars=tab:▸\ ,trail:·
     set ruler
     set scrolloff=5 " keep 10 lines top/bottom for scope
     set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
@@ -136,19 +137,6 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>p :NERDTree projects<CR>
 map <Leader>b :LustyJuggler<CR>
 map <Leader>H :set hls!<CR>
-
-" Jumping into arrow darkness with this 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
-
 
 
 " Text bubbling
