@@ -161,8 +161,8 @@ let Tlist_File_Fold_Auto_Close = 1
 
 " PYDICTION
 "
-"let g:pydiction_location='~/vim/vimfiles/ftplugin/pydiction/complete-dict'
-"let g:pydiction_menu_height = 20
+let g:pydiction_location='~/vimfiles/vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
 
 " COLORS
 "
@@ -217,10 +217,10 @@ endfunction
 autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"highlight columns over 80
+"highlight columns over 79
 "from http://vim.wikia.com/wiki/Highlight_long_lines
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
 
 " GUI Settings {
@@ -241,5 +241,7 @@ set wildignore=*.pyc
 
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMouseMode = 3
+
+let g:pep8_map='<Leader>8'
 
 "autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
