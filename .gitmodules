@@ -37,12 +37,10 @@
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
 	url = https://github.com/tpope/vim-git.git
+        ignore = dirty
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/minibufexpl"]
-	path = vim/bundle/minibufexpl
-	url = https://github.com/sontek/minibufexpl.vim.git
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = https://github.com/wincent/Command-T.git
@@ -76,3 +74,6 @@
 [submodule "github/snipmate_for_django"]
 	path = github/snipmate_for_django
 	url = https://github.com/robhudson/snipmate_for_django.git
+[submodule "vim/bundle/toggle_words"]
+	path = vim/bundle/toggle_words
+	url = git@github.com:typeshige/toggle_words.vim.git
