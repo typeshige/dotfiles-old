@@ -5,14 +5,33 @@
 "    `--''  `--' `-`-`| `--'
 "                  ._.'
 "
+"
+"
+"
+
+"Use Vim settings not Vi, must be first
 set nocompatible
 
+"Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+"Allow backspacing over everything in insert mode
+set backspace=indent,eol,start 
+
+"Lots of :cmdline history
+set history=1000
+
+set showcmd  "show incomplete cmds down the bottom
+set showmode  "show current mode down the bottom
+
+set number  "show line number
+
 filetype off
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
 "silent! call pathogen#runtime_prepend_subdirectories("~/.vim/bundle")
 filetype on
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 set nobackup
 set nowritebackup
@@ -20,6 +39,7 @@ set noswapfile
 
 set foldmethod=indent
 set foldlevel=99
+set nofoldenable  "don't fold by default
 set matchpairs+=<:>
 
 syntax on
@@ -30,7 +50,6 @@ set hidden
 let mapleader = ','
 imap jj <Esc>
 set noexrc " don't use local version of .(g)vimrc, etc
-set number
 set numberwidth=1
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -40,17 +59,8 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 set autochdir
 
-"allow backspacing over everything in insert mode
-set backspace=indent,eol,start 
 
-set history=1000
 
-" editing behaviour {{{
-
-set showcmd
-set showmode
-
-" }}}
 
 
 " autocmd BufEnter * :syntax sync fromstart
@@ -61,57 +71,58 @@ set ai
 
 set mouse=a " use mouse everywhere
 
-" Searching
+"Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase " if caps, go case-sensitive
 
+"Vim UI
+set cursorcolumn " highlight the current column
+set cursorline " highlight the current line
+set nostartofline
+set list " show tabs
+"set listchars=tab:▷⋅,trail:⋅,nbsp:
+set listchars=tab:>-,trail:- " show tabs and trailing
+"set listchars=tab:▸\ ,trail:·,eol:¬
+"set listchars=tab:▸\ ,trail:·
+set ruler
+set scrolloff=5 " keep 10 lines top/bottom for scope
+set sidescrolloff=7
+set sidescroll=1
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              | | | | |  |   |      |  |     |    + current
+"              | | | | |  |   |      |  |     |       column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax in
+"              | | | | |  |   |          square brackets
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
 
-"Vim UI {
-    set cursorcolumn " highlight the current column
-    set cursorline " highlight the current line
-    set nostartofline
-    set list " show tabs
-    set listchars=tab:>-,trail:- " show tabs and trailing
-    "set listchars=tab:▸\ ,trail:·,eol:¬
-    "set listchars=tab:▸\ ,trail:·
-    set ruler
-    set scrolloff=5 " keep 10 lines top/bottom for scope
-    set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-    "              | | | | |  |   |      |  |     |    |
-    "              | | | | |  |   |      |  |     |    + current
-    "              | | | | |  |   |      |  |     |       column
-    "              | | | | |  |   |      |  |     +-- current line
-    "              | | | | |  |   |      |  +-- current % into file
-    "              | | | | |  |   |      +-- current syntax in
-    "              | | | | |  |   |          square brackets
-    "              | | | | |  |   +-- current fileformat
-    "              | | | | |  +-- number of lines
-    "              | | | | +-- preview flag in square brackets
-    "              | | | +-- help flag in square brackets
-    "              | | +-- readonly flag in square brackets
-    "              | +-- rodified flag in square brackets
-    "              +-- full path to file in the buffer
-" }
 
-" Python
+"Python
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
-" Text Formatting/Layout {
-    set tabstop=8
-    set expandtab
-    set formatoptions=rq " insert comment leader on return, let gq format
-    set infercase " case inferred
-    set shiftround
-    set shiftwidth=4 " auto-indent amount when using cindent
-    set softtabstop=4 " when tab or bs, how many spaces
-    set textwidth=79
-    set autoindent
-    set smarttab
-" }
+"Text Formatting/Layout
+set tabstop=8
+set expandtab
+set formatoptions=rq " insert comment leader on return, let gq format
+set infercase " case inferred
+set shiftround
+set shiftwidth=4 " auto-indent amount when using cindent
+set softtabstop=4 " when tab or bs, how many spaces
+set textwidth=79
+set autoindent
+set smarttab
 
 set title
 
@@ -246,7 +257,8 @@ endif
 "
 
 set wildmenu
-set wildmode=longest,full
+"set wildmode=longest,full
+set wildmode=list:longest
 set wildignore+=.git,*.pyc
 set grepprg=ack-grep
 
