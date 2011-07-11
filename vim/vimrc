@@ -90,7 +90,7 @@ set ruler
 set scrolloff=5 " keep 10 lines top/bottom for scope
 set sidescrolloff=7
 set sidescroll=1
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%03v]%{fugitive#statusline()}
 "              | | | | |  |   |      |  |     |    |
 "              | | | | |  |   |      |  |     |    + current
 "              | | | | |  |   |      |  |     |       column
@@ -185,7 +185,8 @@ let g:pydiction_menu_height = 20
 "
 set t_Co=256
 set background=dark
-colorscheme wombat256 
+"colorscheme wombat256 
+colorscheme vividchalk
 "let xterm16_brightness='default'
 "let xterm16_colormap='allblue'
 "colo xterm16
