@@ -30,7 +30,7 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README LICENSE].include? file
+    next if %w[Rakefile README.textile github LICENSE].include? file
     next if FileTest.symlink?(File.join(ENV['HOME'], ".#{file}"))
 
     # handle .local versions; only copy if DNE
