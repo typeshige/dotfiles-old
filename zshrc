@@ -44,5 +44,7 @@ zle -N zle-keymap-select
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
-source ~/mkdjangowrapper/startdjangoproject.sh
-source ~/mkdjangowrapper/startdjangoapp.sh
+if [ -f ~/mkdjangowrapper ]; then
+    source ~/mkdjangowrapper/startdjangoproject.sh
+    source ~/mkdjangowrapper/startdjangoapp.sh
+fi
