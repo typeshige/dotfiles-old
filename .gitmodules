@@ -77,3 +77,6 @@
 [submodule "vim/bundle/toggle_words"]
 	path = vim/bundle/toggle_words
 	url = git@github.com:typeshige/toggle_words.vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
