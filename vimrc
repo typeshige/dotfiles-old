@@ -26,6 +26,7 @@ set showcmd  "show incomplete cmds down the bottom
 set showmode  "show current mode down the bottom
 
 set number  "show line number
+set rnu
 
 filetype off
 "silent! call pathogen#runtime_prepend_subdirectories("~/.vim/bundle")
@@ -42,7 +43,7 @@ set foldlevel=99
 set nofoldenable  "don't fold by default
 set matchpairs+=<:>
 
-syntax on
+syntax enable
 
 set fileformats=unix,mac,dos
 set hidden
@@ -186,7 +187,7 @@ let g:pydiction_menu_height = 20
 set t_Co=256
 set background=dark
 "colorscheme wombat256 
-colorscheme vividchalk
+colorscheme solarized
 "let xterm16_brightness='default'
 "let xterm16_colormap='allblue'
 "colo xterm16
