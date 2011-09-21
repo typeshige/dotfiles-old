@@ -301,6 +301,7 @@ map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 map <leader>Rb :!kill -HUP `cat /tmp/astrobiology_gunicorn.pid`<CR>
 map <leader>Ra :!kill -HUP `cat /tmp/alpha-gunicorn.pid`<CR>
+map <leader>Rn :!kill -HUP `cat /tmp/naiarss_gunicorn.pid`<CR>
 
 au FileType python set omnifunc=pythoncomplete#Complete
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
