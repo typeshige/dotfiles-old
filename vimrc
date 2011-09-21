@@ -148,11 +148,16 @@ let Tlist_Use_Horiz_Window=0
     noremap <space> <C-f>
     map <F4> :TlistToggle<CR>
     map <F7> :NERDTreeToggle<CR>
+
+
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>1 :set number!<CR>
 :noremap <Leader>V :edit $MYVIMRC<CR>
-:noremap <Leader>a :NERDTree apps<CR>
+:noremap <Leader>ab :NERDTree abapps<CR>
+:noremap <Leader>aa :NERDTree alphaapps<CR>
+:noremap <Leader>a :NERDTree ~/.virtualenvs<CR>
 :noremap <Leader>p :NERDTree projects<CR>
+
 map <Leader>b :LustyJuggler<CR>
 map <Leader>H :set hls!<CR>
 
@@ -270,7 +275,8 @@ set pumheight=6
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMouseMode = 3
 
-let g:pep8_map='<Leader>8'
+"let g:pep8_map='<Leader>8'
+map <leader>8 :call Pep8()<CR>
 
 "autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 "
@@ -288,11 +294,13 @@ nmap <silent><Leader>te <Esc>:Pytest error<CR>
 map <leader>dt :set makeprg=python\ manage.py \ test\|:call MakeGreen()<CR>
 
 map <leader>f :CommandT<CR>
-nmap <leader>A <Esc>:Ack!
+"nmap <leader>A <Esc>:Ack!
 
 map <leader>g :GundoToggle<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
+map <leader>Rb :!kill -HUP `cat /tmp/astrobiology_gunicorn.pid`<CR>
+map <leader>Ra :!kill -HUP `cat /tmp/alpha-gunicorn.pid`<CR>
 
 au FileType python set omnifunc=pythoncomplete#Complete
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
