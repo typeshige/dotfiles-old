@@ -6,15 +6,12 @@
 "                  ._.'
 "
 "
-"
-"
 
 "Use Vim settings not Vi, must be first
 set nocompatible
 
 "Pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 "Allow backspacing over everything in insert mode
 set backspace=indent,eol,start 
@@ -29,7 +26,6 @@ set number  "show line number
 set rnu
 
 filetype off
-"silent! call pathogen#runtime_prepend_subdirectories("~/.vim/bundle")
 filetype on
 filetype plugin on
 filetype indent on

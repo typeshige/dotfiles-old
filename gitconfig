@@ -1,3 +1,31 @@
+# vim: syntax=gitconfig ft=gitconfig
+# influenced by: https://github.com/gabebw/dotfiles/blob/master/gitconfig.erb
+[core]
+    editor = `which vim`
+[merge]
+    tool = opendiff
+[alias]
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+[format]
+    pretty = %C(magenta reverse)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+[diff]
+    wordRegex = [^[:space:]]
+[color]
+    ui = auto
+[color "diff"]
+    whitespace = red reverse
+    plain = black
+    meta = cyan
+    frag = magenta bold
+    old = red
+    new = green
+    commit = yellow
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[help]
+    autocorrect = 1
 [user]
-	email = shige.abe@nasa.gov
-	name = Shige Abe
+    email = shige.abe@nasa.gov
+    name = Shige Abe
