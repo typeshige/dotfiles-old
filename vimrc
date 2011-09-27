@@ -271,8 +271,7 @@ set pumheight=6
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMouseMode = 3
 
-"let g:pep8_map='<Leader>8'
-map <leader>8 :call Pep8()<CR>
+autocmd FileType python map <buffer> <leader>8 :call Pep8()<CR>
 
 "autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 "
