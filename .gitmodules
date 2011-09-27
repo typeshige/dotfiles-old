@@ -56,9 +56,6 @@
 [submodule "github/snipmate_for_django"]
 	path = github/snipmate_for_django
 	url = https://github.com/robhudson/snipmate_for_django.git
-[submodule "vim/bundle/toggle_words"]
-	path = vim/bundle/toggle_words
-	url = git@github.com:typeshige/toggle_words.vim.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
@@ -71,3 +68,6 @@
 [submodule "vim/bundle/pydiction"]
 	path = vim/bundle/pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
+[submodule "vim/bundle/toggle_words"]
+	path = vim/bundle/toggle_words
+	url = https://github.com/vim-scripts/toggle_words.vim.git
