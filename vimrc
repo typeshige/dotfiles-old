@@ -27,8 +27,12 @@ set rnu
 
 filetype off
 filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
+
+scriptencoding utf-8
+
+set history=1000
+set spell
 
 set nobackup
 set nowritebackup
@@ -84,9 +88,11 @@ set listchars=tab:>-,trail:- " show tabs and trailing
 "set listchars=tab:▸\ ,trail:·,eol:¬
 "set listchars=tab:▸\ ,trail:·
 set ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set scrolloff=5 " keep 10 lines top/bottom for scope
 set sidescrolloff=7
 set sidescroll=1
+set laststatus=2
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%03v]%{fugitive#statusline()}
 "              | | | | |  |   |      |  |     |    |
 "              | | | | |  |   |      |  |     |    + current
@@ -144,6 +150,7 @@ let Tlist_Use_Horiz_Window=0
     noremap <space> <C-f>
     map <F4> :TlistToggle<CR>
     map <F7> :NERDTreeToggle<CR>
+    
 
 
 :noremap <Leader>n :NERDTreeToggle<CR>
@@ -187,11 +194,7 @@ let g:pydiction_menu_height = 20
 "
 set t_Co=256
 set background=dark
-"colorscheme wombat256 
 colorscheme solarized
-"let xterm16_brightness='default'
-"let xterm16_colormap='allblue'
-"colo xterm16
 
 " Insert New Line *************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
@@ -240,10 +243,11 @@ autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline
 "highlight columns over 79
 "from http://vim.wikia.com/wiki/Highlight_long_lines
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 
-if exists("&colorcolumn")
+if exists("+colorcolumn")
     set colorcolumn=79
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 endif
 
 
@@ -296,8 +300,8 @@ map <leader>f :CommandT<CR>
 map <leader>g :GundoToggle<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-map <leader>Rb :!kill -HUP `cat /tmp/astrobiology_gunicorn.pid`<CR>
-map <leader>Ra :!kill -HUP `cat /tmp/alpha-gunicorn.pid`<CR>
+map <leader>Rb :!kill -HUP `cat /tmp/astrobiology-beta.pid`<CR>
+map <leader>Ra :!kill -HUP `cat /tmp/astrobiology-alpha.pid`<CR>
 map <leader>Rn :!kill -HUP `cat /tmp/naiarss_gunicorn.pid`<CR>
 
 au FileType python set omnifunc=pythoncomplete#Complete

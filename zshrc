@@ -48,3 +48,5 @@ if [ -d ~/djangotools ]; then
     source ~/djangotools/startdjangoproject.sh
     source ~/djangotools/startdjangoapp.sh
 fi
+
+export PATH=$PATH:/var/lib/gems/1.8/bin
