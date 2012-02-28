@@ -71,3 +71,6 @@
 [submodule "vim/bundle/pyflakes-vim"]
 	path = vim/bundle/pyflakes-vim
 	url = https://github.com/kevinw/pyflakes-vim.git
+[submodule "vim/bundle/xmlpretty"]
+	path = vim/bundle/xmlpretty
+	url = https://github.com/vim-scripts/XmlPretty.git

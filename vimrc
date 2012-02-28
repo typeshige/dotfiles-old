@@ -123,7 +123,7 @@ set infercase " case inferred
 set shiftround
 set shiftwidth=4 " auto-indent amount when using cindent
 set softtabstop=4 " when tab or bs, how many spaces
-set textwidth=79
+set textwidth=106
 set autoindent
 set smarttab
 
@@ -160,6 +160,7 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>aa :NERDTree alphaapps<CR>
 :noremap <Leader>a :NERDTree ~/.virtualenvs<CR>
 :noremap <Leader>p :NERDTree projects<CR>
+:noremap <Leader>W :colorscheme wombat256<CR>
 
 map <Leader>b :LustyJuggler<CR>
 map <Leader>H :set hls!<CR>
@@ -245,7 +246,7 @@ autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if exists("+colorcolumn")
-    set colorcolumn=79
+    set colorcolumn=106
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 endif
@@ -296,6 +297,8 @@ map <leader>dt :set makeprg=python\ manage.py \ test\|:call MakeGreen()<CR>
 
 map <leader>f :CommandT<CR>
 "nmap <leader>A <Esc>:Ack!
+
+source /home/django/dotfiles/vim/bundle/ropevim/ftplugin/python/ropevim.vim
 
 map <leader>g :GundoToggle<CR>
 map <leader>j :RopeGotoDefinition<CR>
