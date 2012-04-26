@@ -233,12 +233,17 @@ function! QFixToggle(forced)
   endif
 endfunction
 
+function TrimEndLines()
+    let save_cursor = getpos(".")
+    :silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Trim trailing whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType python autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType python autocmd BufWritePre <buffer> :call TrimEndLines() | call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "highlight columns over 79
