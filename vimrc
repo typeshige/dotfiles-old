@@ -291,27 +291,28 @@ autocmd FileType python map <buffer> <leader>f :call Pyflakes()<CR>
 
 map <leader>td <Plug>TaskList
 
-
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
-
-map <leader>dt :set makeprg=python\ manage.py \ test\|:call MakeGreen()<CR>
-
 map <leader>f :CommandT<CR>
 "nmap <leader>A <Esc>:Ack!
 
-source /home/django/dotfiles/vim/bundle/ropevim/ftplugin/python/ropevim.vim
-
 map <leader>g :GundoToggle<CR>
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
 map <leader>Rb :!kill -HUP `cat /tmp/astrobiology-beta.pid`<CR>
 map <leader>Ra :!kill -HUP `cat /tmp/astrobiology-alpha.pid`<CR>
 map <leader>Rn :!kill -HUP `cat /tmp/naiarss_gunicorn.pid`<CR>
+
+nmap <leader>l <ESC>:TagbarToggle<cr>
+imap <leader>l <ESC>:TagbarToggle<cr>i
+
+"nmap <Left> <<
+"nmap <Right> >>
+"vmap <Left> <gv
+"vmap <Right> >gv
+"nmap <Up> [e
+"nmap <Down> ]e
+"vmap <Up> [egv
+"vmap <Down> ]egv
+
+
+
 
 au FileType python set omnifunc=pythoncomplete#Complete
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
