@@ -23,7 +23,7 @@ set showcmd  "show incomplete cmds down the bottom
 set showmode  "show current mode down the bottom
 
 set number  "show line number
-set rnu
+"set rnu
 
 filetype off
 filetype on
@@ -153,16 +153,19 @@ let Tlist_Use_Horiz_Window=0
     
 
 
-:noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>1 :set number!<CR>
 :noremap <Leader>V :edit $MYVIMRC<CR>
-:noremap <Leader>ab :NERDTree abapps<CR>
-:noremap <Leader>aa :NERDTree alphaapps<CR>
-:noremap <Leader>a :NERDTree ~/.virtualenvs<CR>
-:noremap <Leader>p :NERDTree projects<CR>
 :noremap <Leader>W :colorscheme wombat256<CR>
+:noremap <Leader>a :NERDTree ~/.virtualenvs<CR>
+:noremap <Leader>aa :NERDTree alphaapps<CR>
+:noremap <Leader>ab :NERDTree abapps<CR>
+:noremap <Leader>n :NERDTreeToggle<CR>
+:noremap <Leader>p :NERDTree projects<CR>
+:noremap <Leader>t :CommandT<CR>
 
 map <Leader>b :LustyJuggler<CR>
+let g:pymode_breakpoint_key = '<leader>B'
+let g:pymode_folding = 0
 map <Leader>H :set hls!<CR>
 
 
