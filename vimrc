@@ -35,6 +35,9 @@ set softtabstop=4
 set tabstop=8
 set expandtab
 
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
 filetype plugin on
 filetype indent on
 
