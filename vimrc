@@ -1,52 +1,79 @@
-"        .
-"        |      o
-"    .--.|--.   .  .-.. .-.
-"    `--.|  |   | (   |(.-'
-"    `--''  `--' `-`-`| `--'
-"                  ._.'
-"
-"
-
-"Use Vim settings not Vi, must be first
+" Use Vim settings not Vi, must be first
 set nocompatible
 
-"Pathogen
+" Pathogen
 call pathogen#infect()
+call pathogen#helptags()
 
-"Allow backspacing over everything in insert mode
-set backspace=indent,eol,start 
+" General
+set number                          " show line number
+set backspace=indent,eol,start      " Allow backspacing over everything in insert mode
+set history=1000                    " Lots of :cmdline history
+set showcmd                         " Show incomplete cmds down the bottom
+set showmode                        " Show current mode down the bottom
+set visualbell                      " No sounds
+set hidden
+syntax enable
 
-"Lots of :cmdline history
-set history=1000
+" Search Settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase " if caps, go case-sensitive
 
-set showcmd  "show incomplete cmds down the bottom
-set showmode  "show current mode down the bottom
+" Turn Off Swap Files
+set noswapfile
+set nobackup
+set nowritebackup
 
-set number  "show line number
-"set rnu
+" Indentation
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=4 
+set softtabstop=4 
+set tabstop=8
+set expandtab
 
-filetype off
-filetype on
-filetype plugin indent on
+filetype plugin on
+filetype indent on
+
+" Display Tabs and Trailing Spaces
+"set listchars=tab:▷⋅,trail:⋅,nbsp:
+set listchars=tab:>-,trail:- " show tabs and trailing
+"set listchars=tab:▸\ ,trail:·,eol:¬
+"set listchars=tab:▸\ ,trail:·
+
+set nowrap
+set linebreak
+
+" Folds
+set foldmethod=indent
+set foldlevel=99
+set nofoldenable  "don't fold by default
+set matchpairs+=<:>
+
+
+" Completion
+set wildmode=list:longest
+set wildmenu
+set wildignore+=.git,*.pyc
+set wildignore+=*.png,*.jpg,*.gif
+
+set formatoptions=rq " insert comment leader on return, let gq format
+set infercase " case inferred
+set shiftround
+set textwidth=106
 
 scriptencoding utf-8
 
 set history=1000
 set spell
 
-set nobackup
-set nowritebackup
-set noswapfile
 
-set foldmethod=indent
-set foldlevel=99
-set nofoldenable  "don't fold by default
-set matchpairs+=<:>
 
-syntax enable
 
 set fileformats=unix,mac,dos
-set hidden
 
 let mapleader = ','
 imap jj <Esc>
@@ -66,27 +93,17 @@ set autochdir
 
 " autocmd BufEnter * :syntax sync fromstart
 
-set nowrap
-set linebreak
 set ai
 
 set mouse=a " use mouse everywhere
 
-"Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase " if caps, go case-sensitive
 
 "Vim UI
 set cursorcolumn " highlight the current column
 set cursorline " highlight the current line
 set nostartofline
 set list " show tabs
-"set listchars=tab:▷⋅,trail:⋅,nbsp:
-set listchars=tab:>-,trail:- " show tabs and trailing
-"set listchars=tab:▸\ ,trail:·,eol:¬
-"set listchars=tab:▸\ ,trail:·
+
 set ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set scrolloff=5 " keep 10 lines top/bottom for scope
@@ -115,17 +132,7 @@ autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
-"Text Formatting/Layout
-set tabstop=8
-set expandtab
-set formatoptions=rq " insert comment leader on return, let gq format
-set infercase " case inferred
-set shiftround
-set shiftwidth=4 " auto-indent amount when using cindent
-set softtabstop=4 " when tab or bs, how many spaces
-set textwidth=106
-set autoindent
-set smarttab
+
 
 set title
 
@@ -273,10 +280,6 @@ endif
 " }
 "
 
-set wildmenu
-"set wildmode=longest,full
-set wildmode=list:longest
-set wildignore+=.git,*.pyc
 set grepprg=ack-grep
 
 set completeopt=menuone,longest,preview
