@@ -208,6 +208,7 @@ let g:pydiction_menu_height = 20
 "
 set t_Co=256
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Insert New Line *************************************************************
