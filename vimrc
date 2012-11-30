@@ -36,6 +36,8 @@ set tabstop=8
 set expandtab
 
 " Powerline
+let g:Powerline_theme = "solarized256"
+"let g:Powerline_colorscheme = "solarized256"
 let g:Powerline_symbols = 'fancy'
 
 filetype plugin on
