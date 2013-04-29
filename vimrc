@@ -174,10 +174,13 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>p :NERDTree projects<CR>
 :noremap <Leader>t :CommandT<CR>
+:noremap <Leader>j :RopeGotoDefinition<CR>
 
 map <Leader>b :LustyJuggler<CR>
 let g:pymode_breakpoint_key = '<leader>B'
 let g:pymode_folding = 0
+let g:pymode_lint_ignore = "E501"
+let g:pymode_rope_goto_def_newwin = "new"
 map <Leader>H :set hls!<CR>
 
 
