@@ -40,3 +40,8 @@ fi
 export PATH=$PATH:/var/lib/gems/1.8/bin
 
 source .`uname`_zshrc
+
+function imshige {
+    git config --global user.name "Shige Abe"
+    git config --global user.email "shige.abe@nasa.gov"
+}

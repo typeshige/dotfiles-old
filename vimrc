@@ -68,7 +68,7 @@ set wildignore+=*.png,*.jpg,*.gif
 set formatoptions=rq " insert comment leader on return, let gq format
 set infercase " case inferred
 set shiftround
-set textwidth=106
+set textwidth=80
 
 scriptencoding utf-8
 
@@ -179,7 +179,7 @@ let Tlist_Use_Horiz_Window=0
 map <Leader>b :LustyJuggler<CR>
 let g:pymode_breakpoint_key = '<leader>B'
 let g:pymode_folding = 0
-let g:pymode_lint_ignore = "E501"
+"let g:pymode_lint_ignore = "E501"
 let g:pymode_rope_goto_def_newwin = "new"
 map <Leader>H :set hls!<CR>
 
@@ -271,7 +271,7 @@ autocmd FileType html autocmd BufWritePre <buffer> :call TrimEndLines() | call s
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if exists("+colorcolumn")
-    set colorcolumn=106
+    set colorcolumn=79
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 endif
