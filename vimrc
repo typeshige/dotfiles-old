@@ -172,7 +172,6 @@ let Tlist_Use_Horiz_Window=0
 :noremap <Leader>ab :NERDTree abapps<CR>
 :noremap <Leader>n :NERDTreeToggle<CR>
 :noremap <Leader>p :NERDTree projects<CR>
-:noremap <Leader>t :CommandT<CR>
 :noremap <Leader>j :RopeGotoDefinition<CR>
 
 map <Leader>b :LustyJuggler<CR>
