@@ -13,7 +13,7 @@ set showcmd                         " Show incomplete cmds down the bottom
 set showmode                        " Show current mode down the bottom
 set visualbell                      " No sounds
 set hidden
-syntax enable
+syntax on 
 
 " Search Settings
 set hlsearch
@@ -40,8 +40,7 @@ let g:Powerline_theme = "solarized256"
 "let g:Powerline_colorscheme = "solarized256"
 let g:Powerline_symbols = 'fancy'
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Display Tabs and Trailing Spaces
 "set listchars=tab:▷⋅,trail:⋅,nbsp:

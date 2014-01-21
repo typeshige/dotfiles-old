@@ -45,3 +45,9 @@ function imshige {
     git config --global user.name "Shige Abe"
     git config --global user.email "shige.abe@nasa.gov"
 }
+
+function imvidya {
+    git config --global user.name "Vidya Bobbiligama"
+    git config --global user.email "vidyareddy.bobbiligama@nasa.gov"
+}
+
